@@ -1,7 +1,7 @@
 // example for code reuse using Object.create()
 'use strict';
 
-require('core-js');
+require('core-js'); // needed for Object.assign()
 
 let drawBlood = {
   access: 'waitingRoom',
