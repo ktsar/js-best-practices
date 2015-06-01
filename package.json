@@ -1,0 +1,18 @@
+{
+  "name": "code-reuse-es6",
+  "version": "1.0.0",
+  "description": "(This is a code sample from [this blog post](oren.github.io/blog/js-best-practices.html)",
+  "main": "reuse.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "^5.4.7",
+    "eslint": "^0.22.1"
+  },
+  "dependencies": {
+    "core-js": "^0.9.13"
+  }
+}
