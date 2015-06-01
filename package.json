@@ -10,6 +10,8 @@
   "license": "ISC",
   "devDependencies": {
     "babel": "^5.4.7",
+    "babelify": "^6.1.2",
+    "browserify": "^10.2.3",
     "eslint": "^0.22.1"
   },
   "dependencies": {
