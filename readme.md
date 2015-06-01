@@ -27,9 +27,13 @@ let doctor = Object.assign(Object.create(drawBlood), {
 // josh, oncologist, draws blood.
 ```
 
-## Run the examples
+## Setup
 
     docker-compose build
+    docker-compose run app npm install
+
+## Run the exampels
+
     docker-compose run app node reuse.js
 
 For running in the browser
