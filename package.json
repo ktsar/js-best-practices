@@ -1,7 +1,11 @@
 {
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:oren/js-best-practices.git"
+  },
   "name": "code-reuse-es6",
   "version": "1.0.0",
-  "description": "(This is a code sample from [this blog post](oren.github.io/blog/js-best-practices.html)",
+  "description": "JavaScript Best Practices",
   "main": "reuse.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
