@@ -1,6 +1,6 @@
 # JavaScript Best Practices
 
-(This is a code sample from [this blog post](oren.github.io/blog/js-best-practices.html))
+(This is a code sample from [this blog post](http://oren.github.io/blog/js-best-practices.html))
 
 ```js
 // example for code reuse using Object.create()
