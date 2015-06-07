@@ -61,4 +61,4 @@ We need `browserify`, `babel`, and `babelify` for running this code in the brows
 ## New syntax for methods
 
 ES6 allows a shorter version for methods: `draw()` istead of `draw: function() {}`  
-Read more about it [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions)
+Read more about it [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions).
