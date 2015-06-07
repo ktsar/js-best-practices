@@ -5,7 +5,7 @@ require('core-js'); // needed for Object.assign()
 
 let drawBlood = {
   access: 'waitingRoom',
-  draw () {
+  draw () { // ES6 concise method
     return `${this.name}, ${this.specialty}, draws blood.`;
   }
 };
