@@ -10,7 +10,7 @@ let drawBlood = {
   }
 };
 
-let doctor = Object.assign(Object.create(drawBlood), {
+let doctor = {
   name: 'josh',
   access: 'MedicalRecords',
   specialty: 'oncologist',
@@ -19,7 +19,9 @@ let doctor = Object.assign(Object.create(drawBlood), {
   prescribe (drug) {
     return `${this.name}, ${this.specialty}, prescribes ${drug}.`;
   }
-});
+};
+
+doctor = Object.assign(Object.create(drawBlood), doctor);
 
 var result = doctor.prescribe('tylenol');
 console.log(result);
