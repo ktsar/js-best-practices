@@ -90,7 +90,8 @@ console.log(result);
 
 ## Run the exampels
 
-    docker-compose run app node reuse.js
+    docker-compose run app node delegate.js
+    docker-compose run app node concatenative.js
 
 For running in the browser
 
