@@ -1,4 +1,4 @@
-// example for prototypal inheritance using Object.assign
+// example for code reuse using Object.create()
 'use strict';
 
 require('core-js'); // needed for Object.assign()

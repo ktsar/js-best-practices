@@ -4,7 +4,7 @@
 
 Demo of code reuse via two techniues:
 
-* delegate prototype
+* prototypal inheritance
 * concatenative inheritance
 
 ## delegate prototype
@@ -90,7 +90,7 @@ console.log(result);
 
 ## Run the exampels
 
-    docker-compose run app node delegate.js
+    docker-compose run app node prototypal.js
     docker-compose run app node concatenative.js
 
 For running in the browser
