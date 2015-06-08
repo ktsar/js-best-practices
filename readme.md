@@ -7,7 +7,7 @@ Demo of code reuse via two techniues:
 * prototypal inheritance
 * concatenative inheritance
 
-## delegate prototype
+## Prototypal inheritance
 
 ```js
 // example for code reuse using Object.create()
@@ -43,9 +43,11 @@ console.log(result);
 // josh, oncologist, draws blood.
 ```
 
-## concatenative inheritance
+## Concatenative inheritance
 
 ```js
+// example for code reuse using Object.assign()
+
 let drawBlood = {
   access: 'waitingRoom',
   draw () {
