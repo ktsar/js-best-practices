@@ -21,6 +21,8 @@ let doctor = {
   }
 };
 
+// first argument is the prototype that we want to reuse
+// it's called delegate prototype
 doctor = Object.assign(Object.create(drawBlood), doctor);
 
 var result = doctor.prescribe('tylenol');
