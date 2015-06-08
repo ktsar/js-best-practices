@@ -2,8 +2,7 @@
 
 (This is a code sample from [this blog post](http://oren.github.io/blog/js-best-practices.html))
 
-The key for code reuse:  
-Keep your behavior separate from your data. have a lot of standalone functions that don't mutate anything, and pass your data through them.
+The key for code reuse: **Keep your behavior separate from your data. have a lot of standalone functions that don't mutate anything, and pass your data through them.**
 
 If simple functions are not enough, here are two more techniques:
 
