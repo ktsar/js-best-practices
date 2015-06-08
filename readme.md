@@ -2,7 +2,10 @@
 
 (This is a code sample from [this blog post](http://oren.github.io/blog/js-best-practices.html))
 
-Demo of code reuse via two techniues:
+The key for code reuse:  
+Keep your behavior separate from your data. have a lot of standalone functions that don't mutate anything, and pass your data through them.
+
+If simple functions are not enough, here are two more techniques:
 
 * prototypal inheritance
 * concatenative inheritance
@@ -12,32 +15,28 @@ Demo of code reuse via two techniues:
 ```js
 // example for code reuse using Object.create()
 
-let drawBlood = {
-  access: 'waitingRoom',
-  draw () {
-    return `${this.name}, ${this.specialty}, draws blood.`;
+let canDraw = {
+  drawBlood () { // ES6 concise method
+   console.log(`${this.name}, ${this.specialty}, draws blood.`);
   }
 };
 
 let doctor = {
   name: 'josh',
-  access: 'MedicalRecords',
   specialty: 'oncologist',
 
   // a short-hand way to declare a function within an object literal
   prescribe (drug) {
-    return `${this.name}, ${this.specialty}, prescribes ${drug}.`;
+    console.log(`${this.name}, ${this.specialty}, prescribes ${drug}.`);
   }
 };
 
 // first argument is the prototype that we want to reuse
 // it's called delegate prototype
-doctor = Object.assign(Object.create(drawBlood), doctor);
+doctor = Object.assign(Object.create(canDraw), doctor);
 
-var result = doctor.prescribe('tylenol');
-console.log(result);
-result = doctor.draw();
-console.log(result);
+doctor.prescribe('tylenol');
+doctor.drawBlood();
 
 // josh, oncologist, prescribes tylenol.
 // josh, oncologist, draws blood.
@@ -48,41 +47,42 @@ console.log(result);
 ```js
 // example for code reuse using Object.assign()
 
-let drawBlood = {
-  access: 'waitingRoom',
-  draw () {
-    return `${this.name}, ${this.specialty}, draws blood.`;
+let canDrawBlood = {
+  drawBlood () { // ES6 concise method
+   console.log(`${this.name}, ${this.specialty}, draws blood.`);
   }
 };
 
-let testSugarLevel = {
+let canTestSugar = {
   testSugar () {
-    return `${this.name}, ${this.specialty}, test sugar level.`;
+    console.log(`${this.name}, ${this.specialty}, test sugar level.`);
   }
-};
+}
 
 let doctor = {
   name: 'josh',
-  access: 'MedicalRecords',
   specialty: 'oncologist',
 
   // a short-hand way to declare a function within an object literal
   prescribe (drug) {
-    return `${this.name}, ${this.specialty}, prescribes ${drug}.`;
+    console.log(`${this.name}, ${this.specialty}, prescribes ${drug}.`);
   }
 };
 
 // copying all of the properties in testSugarLevel, drawBlood, and doctor.
 // This technique is called concatenative inheritance, and the prototypes you inherit from are sometimes referred to as exemplar prototypes, which differ from delegate prototypes in that you copy from them, rather than delegate to them.
 // it's not sharing the memory as in delegate prototype
-doctor = Object.assign(testSugarLevel, drawBlood, doctor);
 
-var result = doctor.prescribe('tylenol');
-console.log(result);
-result = doctor.draw();
-console.log(result);
-result = doctor.testSugar();
-console.log(result);
+// note: assign mutate the first argument
+doctor = Object.assign({}, canTestSugar, canDrawBlood, doctor);
+
+doctor.prescribe('tylenol');
+doctor.drawBlood();
+doctor.testSugar();
+
+// josh, oncologist, prescribes tylenol.
+// josh, oncologist, draws blood.
+// josh, oncologist, test sugar level.
 ```
 
 ## Setup
